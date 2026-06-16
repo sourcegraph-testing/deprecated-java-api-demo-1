@@ -12,10 +12,10 @@ public final class LaunchChecklistApp {
             "alerts"
         };
         final Boolean[] readiness = {
-            new Boolean(true),
-            new Boolean(true),
-            new Boolean(false),
-            new Boolean(true)
+            Boolean.valueOf(true),
+            Boolean.valueOf(true),
+            Boolean.valueOf(false),
+            Boolean.valueOf(true)
         };
 
         int readyCount = 0;
