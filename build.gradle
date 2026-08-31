@@ -4,6 +4,12 @@ plugins {
 
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
 sonar {
   properties {
     property "sonar.projectKey", "deprecated-java-api-demo-1"
