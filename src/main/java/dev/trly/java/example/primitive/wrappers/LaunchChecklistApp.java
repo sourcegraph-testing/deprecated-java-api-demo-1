@@ -1,6 +1,11 @@
 package dev.trly.java.example.primitive.wrappers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public final class LaunchChecklistApp {
+    private static final Logger LOGGER = LoggerFactory.getLogger(LaunchChecklistApp.class);
+
     private LaunchChecklistApp() {
     }
 
@@ -22,12 +27,12 @@ public final class LaunchChecklistApp {
         for (int index = 0; index < readiness.length; index++) {
             final boolean ready = readiness[index].booleanValue();
             final String status = ready ? "ready" : "waiting";
-            System.out.printf("%s: %s%n", steps[index], status);
+            LOGGER.info("{}: {}", steps[index], status);
             if (ready) {
                 readyCount++;
             }
         }
 
-        System.out.printf("Summary: %d of %d steps are ready%n", readyCount, readiness.length);
+        LOGGER.info("Summary: {} of {} steps are ready", readyCount, readiness.length);
     }
 }
